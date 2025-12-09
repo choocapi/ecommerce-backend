@@ -186,12 +186,10 @@
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>${projectlombok-lombok.version}</version>
                         </exclude>
                         <exclude>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
-                            <version>${mapstruct.version}</version>
                         </exclude>
                     </excludes>
                 </configuration>
