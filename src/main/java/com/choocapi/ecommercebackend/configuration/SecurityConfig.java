@@ -97,12 +97,19 @@ public class SecurityConfig {
     /**
      * CORS Configuration
      * Allows frontend to make requests from configured origin
+     * If allowedOrigins is empty, allows all origins (useful for development)
      */
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         
-        config.setAllowedOrigins(Arrays.asList(allowedOrigins));
+        // If allowedOrigins is empty or null, allow all origins
+        if (allowedOrigins == null || allowedOrigins.trim().isEmpty()) {
+            config.addAllowedOriginPattern("*");
+        } else {
+            config.setAllowedOrigins(Arrays.asList(allowedOrigins.split(",")));
+        }
+        
         config.setAllowedMethods(Arrays.asList(
                 HttpMethod.GET.name(),
                 HttpMethod.POST.name(),

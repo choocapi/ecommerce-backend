@@ -73,7 +73,7 @@ jwt:
   refresh-token-duration: ${JWT_REFRESH_TOKEN_DURATION} # in days
 
 cors:
-  allowed-origins: ${CORS_ALLOWED_ORIGINS}
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:}
 
 email:
   token-expiry-minutes:
