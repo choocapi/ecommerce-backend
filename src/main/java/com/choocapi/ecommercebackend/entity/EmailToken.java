@@ -39,7 +39,7 @@ public class EmailToken {
     @Column(nullable = false, unique = true, length = 64)
     String token;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     User user;
 

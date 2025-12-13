@@ -74,7 +74,7 @@ public class AuthenticationService {
     protected long REFRESH_TOKEN_DURATION;
 
     @NonFinal
-    @Value("${cors.allowed-origins}")
+    @Value("${app.frontend-url}")
     protected String FRONTEND_URL;
 
     @NonFinal

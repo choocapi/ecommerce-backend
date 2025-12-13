@@ -42,20 +42,12 @@ spring:
         # Clear cache on schema changes
         jdbc:
           batch_size: 20
+          time_zone: UTC+7
+  jackson:
+    time-zone: Asia/Ho_Chi_Minh
   transaction:
     default-timeout: 30
     rollback-on-commit-failure: true
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}
@@ -80,6 +72,10 @@ email:
   token-expiry-minutes:
     verify: 60
     reset: 30
+
+resend:
+  api-key: ${RESEND_API_KEY}
+  from-email: ${RESEND_FROM_EMAIL:onboarding@resend.dev}
 
 vnpay:
   pay-url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
